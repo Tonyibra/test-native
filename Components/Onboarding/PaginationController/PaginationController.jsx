@@ -5,7 +5,7 @@ export const PaginationController = ({ title, onPress, ...props }) => {
   const color = props.color;
 
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
+    <TouchableOpacity activeOpacity={0.7} onPress={() => onPress()}>
       <Text style={[styles.text, { color }]}>{title}</Text>
     </TouchableOpacity>
   );

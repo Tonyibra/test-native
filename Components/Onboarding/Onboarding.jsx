@@ -13,8 +13,8 @@ import { OnboardingData } from "./OnboardingData.jsx";
 import { PaginationController } from "./PaginationController/PaginationController.jsx";
 const { width, height } = Dimensions.get("window");
 
-export const Onboarding = () => {
-  const [cuurentScreenIdx, setCurrentScreenIdx] = useState(0);
+export const Onboarding = ({ navigation }) => {
+  const [currentScreenIdx, setCurrentScreenIdx] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
   const sliderRef = useRef(null);
   const viewableItemsChanged = useRef(({ viewableItems }) => {
@@ -22,6 +22,18 @@ export const Onboarding = () => {
   }).current;
 
   const viewConfig = useRef({ viewAreaCoveragePercentThreshold: 50 }).current;
+
+  const scrollTo = () => {
+    if (currentScreenIdx < slidesData.length - 1) {
+      sliderRef.current.scrollToIndex({ index: currentScreenIdx + 1 });
+    } else if (currentScreenIdx === slidesData.length - 1) {
+      navigation.replace("SignIn");
+    }
+  };
+
+  const skipBoarding = () => {
+    navigation.replace("SignIn");
+  };
   return (
     <View style={styles.container}>
       <View styles={styles.flatListView}>
@@ -45,8 +57,12 @@ export const Onboarding = () => {
       </View>
       <Paginator data={slidesData} scrollX={scrollX} />
       <View style={styles.controlPaginators}>
-        <PaginationController title="Skip" color="#39393B" />
-        <PaginationController title="Next" color="#1667B1" />
+        <PaginationController
+          title="Skip"
+          color="#39393B"
+          onPress={skipBoarding}
+        />
+        <PaginationController title="Next" color="#1667B1" onPress={scrollTo} />
       </View>
     </View>
   );
