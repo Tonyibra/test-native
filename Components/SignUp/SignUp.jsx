@@ -44,10 +44,7 @@ export const SignUp = ({ navigation }) => {
         />
       </View>
       <View style={styles.signUpContainer}>
-        <PrimaryBtn
-          title="Sign UP"
-          onPress={() => navigation.navigate("ContinueLogin")}
-        />
+        <PrimaryBtn title="Sign UP" />
         <Text style={styles.otherLoginsText}>- Or login with -</Text>
         <View style={styles.socialsContainer}>
           <Socials

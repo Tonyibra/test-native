@@ -13,7 +13,7 @@ import { ForgetPassword } from "../Forms/ForgetPassword/ForgetPassword";
 import { Forms } from "../Forms/Forms";
 import { Socials } from "../Socials/Socials";
 const { width, height } = Dimensions.get("window");
-import TextInput from "../../Components/Forms/Login/TextInput";
+import TextInput from "../Forms/Inputs/TextInput";
 
 export const Login = ({ navigation }) => {
   return (
@@ -36,7 +36,7 @@ export const Login = ({ navigation }) => {
         />
       </View>
       <View style={styles.forgetPassword}>
-        <ForgetPassword />
+        <ForgetPassword onPress={() => navigation.navigate("ForgetPassword")} />
       </View>
       <View style={styles.signInContainer}>
         <SecondaryBtn
@@ -69,7 +69,7 @@ export const Login = ({ navigation }) => {
       </View>
       <View style={styles.footer}>
         <Text style={styles.footerTitle}>
-          Don’t have an account?{" "}
+          Don’t have an account?
           <Text
             style={styles.footerLink}
             onPress={() => navigation.navigate("SignUp")}

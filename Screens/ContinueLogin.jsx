@@ -9,10 +9,10 @@ import {
 import Map from "../assets/Map.png";
 import SignIn from "../Components/Login/SignIn";
 const { width, height } = Dimensions.get("window");
-export const ContinueLogin = () => {
+export const ContinueLogin = ({ navigation }) => {
   return (
     <ImageBackground style={{ flex: 1 }} source={Map}>
-      <SignIn />
+      <SignIn navigation={navigation} />
       <View style={styles.overlay} />
     </ImageBackground>
   );

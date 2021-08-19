@@ -7,6 +7,8 @@ import { OnboardingScreen } from "./Screens/OnboardingScreen";
 import { AuthScreen } from "./Screens/AuthScreen.jsx";
 import { ContinueLogin } from "./Screens/ContinueLogin";
 import { SignUpScreen } from "./Screens/SignUpScreen";
+import { ForgetPasswordScreen } from "./Screens/ForgetPasswordScreen";
+import HomeScreen from "./Screens/HomeScreen";
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -39,6 +41,27 @@ export default function App() {
             headerTransparent: true,
             title: null,
             headerBackTitleVisible: false,
+          }}
+        />
+        <Stack.Screen
+          name="ForgetPassword"
+          component={ForgetPasswordScreen}
+          options={{
+            headerTransparent: true,
+            title: null,
+            headerBackTitleVisible: false,
+          }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            headerShown: false,
+            headerLeft: null,
+            gestureEnabled: false,
+            headerStyle: {
+              backgroundColor: "#1667B1",
+            },
           }}
         />
       </Stack.Navigator>

@@ -3,8 +3,8 @@ import { StyleSheet, Text, View, Image, SafeAreaView } from "react-native";
 import Logo from "../../assets/SwiftLogo.png";
 import { PrimaryBtn } from "../Buttons/PrimaryBtn";
 import { Forms } from "../Forms/Forms";
-import TextInput from "../Forms/Login/TextInput";
-const SignIn = () => {
+import TextInput from "../Forms/Inputs/TextInput";
+const SignIn = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.imgContainer}>
@@ -19,7 +19,10 @@ const SignIn = () => {
         <TextInput placeholder="PhoneNumber" />
       </View>
       <View style={styles.btnContainer}>
-        <PrimaryBtn title="Sign in" />
+        <PrimaryBtn
+          title="Sign in"
+          onPress={() => navigation.replace("Home")}
+        />
       </View>
     </SafeAreaView>
   );
