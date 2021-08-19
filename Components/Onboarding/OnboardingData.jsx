@@ -1,14 +1,8 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  useWindowDimensions,
-} from "react-native";
+import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
+const { width, height } = Dimensions.get("window");
 
 export const OnboardingData = ({ item }) => {
-  const { width } = useWindowDimensions();
   return (
     <View style={[styles.container, { width }]}>
       <Image
@@ -28,8 +22,8 @@ const styles = StyleSheet.create({
   overlay: {
     flex: 1,
     position: "absolute",
-    width: "100%",
-    height: "100%",
+    width: width,
+    height: height,
     backgroundColor:
       "linear-gradient(90deg, rgba(245,247,251,1) 0%, rgba(245,247,251,1) 0%);",
     zIndex: 1,
