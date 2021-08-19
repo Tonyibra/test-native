@@ -1,13 +1,18 @@
 import React from "react";
-import { StyleSheet, ImageBackground, Dimensions, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  Dimensions,
+} from "react-native";
 import Map from "../assets/Map.png";
-import { Login } from "../Components/Login/Login";
+import SignIn from "../Components/Login/SignIn";
 const { width, height } = Dimensions.get("window");
-
-export const AuthScreen = ({ navigation }) => {
+export const ContinueLogin = () => {
   return (
     <ImageBackground style={{ flex: 1 }} source={Map}>
-      <Login navigation={navigation} />
+      <SignIn />
       <View style={styles.overlay} />
     </ImageBackground>
   );

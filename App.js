@@ -5,6 +5,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { OnboardingScreen } from "./Screens/OnboardingScreen";
 import { AuthScreen } from "./Screens/AuthScreen.jsx";
+import { ContinueLogin } from "./Screens/ContinueLogin";
+import { SignUpScreen } from "./Screens/SignUpScreen";
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -20,6 +22,24 @@ export default function App() {
           name="SignIn"
           component={AuthScreen}
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SignUp"
+          component={SignUpScreen}
+          options={{
+            headerTransparent: true,
+            title: null,
+            headerBackTitleVisible: false,
+          }}
+        />
+        <Stack.Screen
+          name="ContinueLogin"
+          component={ContinueLogin}
+          options={{
+            headerTransparent: true,
+            title: null,
+            headerBackTitleVisible: false,
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

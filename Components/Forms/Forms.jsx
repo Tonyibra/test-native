@@ -1,23 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-import TextInput from "./Login/TextInput";
-
 export const Forms = ({ title }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.inputStyles}
-          placeholder="Enter Email or Phone Number"
-        />
-        <TextInput
-          style={styles.inputStyles}
-          placeholder="Password"
-          secureTextEntry={true}
-        />
-      </View>
     </View>
   );
 };

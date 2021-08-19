@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     backgroundColor:
       "linear-gradient(90deg, rgba(245,247,251,1) 0%, rgba(245,247,251,1) 0%);",
     zIndex: 1,
-    opacity: 0.5,
+    opacity: 0.8,
   },
 
   OnBoardingImage: {
